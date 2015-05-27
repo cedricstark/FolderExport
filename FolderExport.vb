@@ -9,7 +9,7 @@ Sub FolderExport()
     r = 1
     Do While r <= maxRows
       If Len(Dir(ActiveWorkbook.Path & "\" & Rng(r, 1), vbDirectory)) = 0 Then
-        orderDir = "C:\Users\doug\Documents\Open Jobs" & "\" & "[" & Rng(r, 1) & "]" & " " & Rng(r, 2) & " " & Rng(r, 3) & " " & Rng(r, 4) & " " & Rng(r, 5) 'Line declares the location and name of the new folder.
+        orderDir = "C:\Users\name\Documents\Open Jobs" & "\" & "[" & Rng(r, 1) & "]" & " " & Rng(r, 2) & " " & Rng(r, 3) & " " & Rng(r, 4) & " " & Rng(r, 5) 'Line declares the location and name of the new folder.
         MkDir (orderDir)'Don't be a fucking dumb ass this needs changed for the server
         On Error Resume Next
       End If
@@ -26,7 +26,7 @@ Sub populateOrder(wOrder,oDir)
   Dim targetFile As String
   Dim answer As Integer
   Dim pathFrom as String
-  pathFrom = "C:\Users\doug\Documents\Work Orders" 'Don't be a fucking dumb ass this needs changed for the server
+  pathFrom = "C:\Users\name\Documents\Work Orders" 'Don't be a fucking dumb ass this needs changed for the server
 
   Set fso = CreateObject("Scripting.FileSystemObject")
   sourceFile = pathFrom & "\" & wOrder & ".pdf"
@@ -50,7 +50,7 @@ Sub checkList(oDir, wOrder)
   Dim sourceFile As String
   Dim destinationFile As String
   destinationFile = oDir & "\" & wOrder & "-checklist.pdf"
-  sourceFile = "C:\Users\doug\Documents\hidden\checklist.pdf"'Don't be a fucking dumb ass this needs changed for the server
+  sourceFile = "C:\Users\name\Documents\hidden\checklist.pdf"'Don't be a fucking dumb ass this needs changed for the server
 
   FileCopy sourceFile, destinationFile
 End Sub
